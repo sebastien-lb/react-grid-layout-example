@@ -3,3 +3,4 @@ export { default as LayoutWithSave } from "./LayoutWithSave/LayoutWithSave";
 export {
   default as LayoutWithAutoSave
 } from "./LayoutWithAutoSave/LayoutWithAutoSave";
+export { default as Example } from "./Example/Example";

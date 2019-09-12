@@ -2,13 +2,19 @@ import React from "react";
 import "./App.css";
 import Button from "@material-ui/core/Button";
 
-import { BasicLayout, LayoutWithAutoSave, LayoutWithSave } from "./pages";
+import {
+  BasicLayout,
+  LayoutWithAutoSave,
+  LayoutWithSave,
+  Example
+} from "./pages";
 import { GridItem, GRID_ITEM_TYPE } from "./components/types";
 
 const VIEW = {
   BASIC: "BASIC",
   SAVE: "SAVE",
-  AUTOSAVE: "AUTOSAVE"
+  AUTOSAVE: "AUTOSAVE",
+  EXAMPLE: "EXAMPLE"
 };
 
 const items: GridItem[] = [
@@ -74,6 +80,8 @@ class App extends React.Component {
         return <LayoutWithSave items={items} />;
       case VIEW.AUTOSAVE:
         return <LayoutWithAutoSave items={items} />;
+      case VIEW.EXAMPLE:
+        return <Example />;
     }
   };
 
@@ -81,6 +89,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div>
+          <Button onClick={this.switchView(VIEW.EXAMPLE)}>Exmaple</Button>
           <Button onClick={this.switchView(VIEW.BASIC)}>BASIC</Button>
           <Button onClick={this.switchView(VIEW.SAVE)}>With Save</Button>
           <Button onClick={this.switchView(VIEW.AUTOSAVE)}>
