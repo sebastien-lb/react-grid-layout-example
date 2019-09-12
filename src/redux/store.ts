@@ -4,8 +4,11 @@ import createSagaMiddleware from "redux-saga";
 import { reducer as githubReducer } from "./github/github.reducer";
 import { githubSaga } from "./github/github.sagas";
 
+import { reducer as layoutReducer } from "./layout/layout.reducer";
+
 const rootReducer = combineReducers({
-  githubState: githubReducer
+  githubState: githubReducer,
+  layoutState: layoutReducer
 });
 
 const initialState = {};

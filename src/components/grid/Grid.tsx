@@ -19,6 +19,7 @@ interface OwnProps {
   classes: Record<ClassNames, string>;
   layouts?: Layout[];
   items?: GridItem[];
+  onLayoutChange?: (layout: Layout[]) => void;
 }
 
 type Props = OwnProps;
@@ -36,7 +37,7 @@ export class Grid extends React.Component<Props> {
   };
 
   public render(): JSX.Element {
-    const { layouts = undefined, items = [] } = this.props;
+    const { layouts = undefined, items = [], onLayoutChange } = this.props;
     console.log("zet", items);
     const fatalLayout = items.map((item, index) => ({
       static: false,
@@ -49,8 +50,8 @@ export class Grid extends React.Component<Props> {
     return (
       <div>
         <ReactGridLayout
-          layout={fatalLayout}
-          onLayoutChange={(layout: Layout[]) => console.log("layouts", layouts)}
+          layout={layouts || fatalLayout}
+          onLayoutChange={onLayoutChange}
           rowHeight={40}
           // cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
         >

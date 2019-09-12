@@ -89,7 +89,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div>
-          <Button onClick={this.switchView(VIEW.EXAMPLE)}>Exmaple</Button>
+          <Button onClick={this.switchView(VIEW.EXAMPLE)}>Example</Button>
           <Button onClick={this.switchView(VIEW.BASIC)}>BASIC</Button>
           <Button onClick={this.switchView(VIEW.SAVE)}>With Save</Button>
           <Button onClick={this.switchView(VIEW.AUTOSAVE)}>
