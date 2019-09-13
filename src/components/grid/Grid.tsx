@@ -53,13 +53,9 @@ export class Grid extends React.Component<Props> {
           layout={layouts || fatalLayout}
           onLayoutChange={onLayoutChange}
           rowHeight={40}
-          // cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
         >
           {items.map(item => (
-            <div key={item.id}>
-              {/* <SizeMe>{({size}) => this.renderItem(item)}</SizeMe> */}
-              {this.renderItem(item)}
-            </div>
+            <div key={item.id}>{this.renderItem(item)}</div>
           ))}
         </ReactGridLayout>
       </div>
